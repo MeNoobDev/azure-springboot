@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'vedant-springboot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C93A51879AC74FA5B40302725E2028B8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CC42DD3A1DC7407F8A600A6007CB6628 }}
           package: '*.jar'
