@@ -67,17 +67,23 @@ public class AdminController {
         return "products";
     }
     @GetMapping("/admin/products/add")
-    public String productAddGet(Model model){
+    public String productAddGet(Model model) {
+        System.out.println("vedant");
         ProductDTO productDTO = new ProductDTO();
-        model.addAttribute("productDTO",productDTO);
-        model.addAttribute("categories",categoryService.getAllCategory());
+        productDTO.setImageName("defaultImageName");  // Set a default or retrieve from somewhere
+        model.addAttribute("productDTO", productDTO);
+        model.addAttribute("categories", categoryService.getAllCategory());
         return "productsAdd";
     }
+
 
     @PostMapping("/admin/products/add")
     public String productAddPost(@ModelAttribute("productDTO")ProductDTO productDTO,
                                  @RequestParam("productImage")MultipartFile file,
                                  @RequestParam("imgName")String imgName) throws IOException{
+        System.out.println("\n");
+        System.out.println("imgName: " + imgName);
+        System.out.println("file: " + file);
 
         Product product = new Product();
         product.setId(productDTO.getId());
@@ -98,6 +104,7 @@ public class AdminController {
         }
         product.setImageName(imageUUID);
         productService.addProduct(product);
+        System.out.println("imgName: " + imgName);
 
         return "redirect:/admin/products";
     }
@@ -122,5 +129,6 @@ public class AdminController {
         model.addAttribute("productDTO",productDTO);
         return "productsAdd";
     }
+
 
 }

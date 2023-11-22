@@ -11,12 +11,13 @@ public class Product {
     private Long id;
     private String name;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;
-	private double price;
+    private double price;
     private double weight;
     private String description;
-	private String imageName;
+    private String imageName;
 
-
+    @Lob
+    private byte[] imageData; // Add this field for storing image data
 }
