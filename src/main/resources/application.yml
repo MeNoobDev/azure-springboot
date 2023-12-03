@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://javatechie-server.database.windows.net:1433;database=javatechiedb;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: javatechie
-    password: password@123
+    url: jdbc:postgresql://mypsqldb-vedant3532-7705.a.aivencloud.com:15768/defaultdb?sslmode=require
+    username: avnadmin
+    password: AVNS_LPyJ97Vf462EWgqQcQZ
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      dialect: org.hibernate.dialect.PostgreSQLDialect
   security:
     oauth2:
       client:
@@ -15,5 +15,6 @@ spring:
           google:
             client-id: 102113765632-emdul139m3scdj54um431i0ptmc75sb5.apps.googleusercontent.com
             client-secret: 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
+
 server:
-  port: 9191
+  port: 8080
