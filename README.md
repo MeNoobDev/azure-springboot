@@ -4,7 +4,7 @@ Shoptronic is a CRUD e-commerce platform that integrates a responsive front end 
 
 ## Features
 
-- **Full Stack Development:** HTML, CSS, JS, and Spring Boot with Azure SQL.
+- **Full Stack Development:** HTML, CSS, JS, and Spring Boot with PostgreSQL.
 - **CRUD Operations:** Essential functionalities for a complete e-commerce experience.
 - **Authentication with Google OAuth2:** Secure and hassle-free login.
 - **Payment Gateway (Work in Progress):** working on implementing a payments gateway.
@@ -13,5 +13,5 @@ Shoptronic is a CRUD e-commerce platform that integrates a responsive front end 
 
 - **Front End:** HTML, CSS, JS
 - **Back End:** Spring Boot
-- **Database:** Azure SQL
+- **Database:** PostgreSQL
 - **Authentication:** Google OAuth2
