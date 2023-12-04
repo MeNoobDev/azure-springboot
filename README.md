@@ -1,4 +1,4 @@
-# Shoptronic - Azure SpringBoot
+# Shoptronic - SpringBoot CRUD Project
 
 Shoptronic is a CRUD e-commerce platform that integrates a responsive front end (HTML, CSS, JS) with Spring Boot on the backend. Supported by PostgreSQL for data management, Shoptronic also features secure authentication through Google OAuth2. Currently payments gateway is under work.
 
