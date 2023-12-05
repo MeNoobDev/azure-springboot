@@ -28,35 +28,45 @@ Shoptronic is a CRUD e-commerce platform that integrates a responsive front end 
 
 1. **Home Page:** `/home`
    ![home](/ecom_screenshots/home.png)
+    <br>
 
 2. **Shopping Page:** `/shop`
    ![shop1](/ecom_screenshots/shop_grid.png)
     <br>
    ![shop2](/ecom_screenshots/shop_list.png)
+   <br>
 
 3. **Cart Page:** `/cart`
    ![cart](/ecom_screenshots/cart.png)
+   <br>
 
 4. **Register Page:** `/register`
    ![register](/ecom_screenshots/register.png)
+   <br>
 
 5. **Checkout Page:** `/checkout`
    ![checkout](/ecom_screenshots/checkout.png)
+   <br>
 
 6. **Admin CMS Page:** `/admin`
    ![admin](/ecom_screenshots/admin.png)
+   <br>
 
 7. **Add Category Page:** `/admin/category`
    ![category](/ecom_screenshots/category.png)
+   <br>
 
 8. **Products Page:** `/admin/products`
    ![products](/ecom_screenshots/products.png)
+   <br>
 
 9. **Add Product Page:** `/admin/product_add`
     ![product_add](/ecom_screenshots/product_add.png)
+   <br>
 
 10. **Update Product Page:** `/admin/update_product`
     ![update_product](/ecom_screenshots/update_product.png)
+    <br>
 
 
 ## Getting Started
@@ -68,6 +78,5 @@ Follow these steps to set up and run the Shoptronic project locally:
 3. Build and run the project using your preferred IDE or build tool.
 4. Access the application through the provided endpoints.
 
-## Contributing
 
 
