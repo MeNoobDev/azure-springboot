@@ -23,15 +23,58 @@
             rgb(115, 180, 236),
             #134e67
           ); /* Gradient from dark blue to black */
-        }
+        }/* Navigation Bar */
+.navbar {
+    background-color: #333 !important;
+}
+
+.navbar-brand img {
+    height: 60px !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 15px !important;
+    transition: color 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+}
+
+.navbar-nav .nav-link:focus {
+    outline: none !important;
+}
+
+.navbar-nav .nav-link span {
+    font-weight: bold !important;
+}
+
+.nav-link span.badge {
+    background-color: #007bff !important;
+    font-size: 0.75rem !important;
+    margin-left: 5px !important;
+}
+
+.nav-link span.badge:hover {
+    background-color: #0056b3 !important;
+}
+
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
-                 class="d-inline-block align-top" alt=""/>
+            <img th:src="@{/images/logo.png}" height="60px"  src="../static/images/logo.png" class="d-inline-block align-top" alt=""/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

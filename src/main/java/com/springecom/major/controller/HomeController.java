@@ -33,6 +33,8 @@ public class HomeController {
         return "index";
     }
 
+
+
     @GetMapping("/shop")
     public String shop(Model model) {
         model.addAttribute("categories", categoryService.getAllCategory());

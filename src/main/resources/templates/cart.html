@@ -10,7 +10,91 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
-    <title>Document</title>
+    <title>Document</title>    <style>
+    /* Add your custom styles here */
+
+    /* Remove underline on hover for navbar links */
+    .navbar-nav .nav-item .nav-link:hover {
+        text-decoration: none;
+    }
+
+    /* Customize the navbar color */
+    .navbar {
+        background: linear-gradient(
+            to right,
+            rgb(115, 180, 236),
+            #134e67
+        ); /* Gradient from dark blue to black */
+    }
+
+    /* Style for main content container */
+    main {
+        margin-top: 50px; /* Adjust the margin as needed */
+        background-color: #f8f9fa; /* Light gray background */
+        padding: 20px; /* Add padding to the main content */
+    }
+
+    /* Style for card in the cart */
+    .wish-list .card {
+        border: none; /* Remove border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    }
+
+    /* Style for the checkout button */
+    .btn-primary {
+        background-color: #007bff; /* Primary color */
+        border-color: #007bff; /* Primary color */
+    }
+
+    /* Style for the discount code input */
+    #discount-code {
+        border-radius: 5px; /* Rounded corners */
+    }/* Navigation Bar */
+.navbar {
+    background-color: #333 !important;
+}
+
+.navbar-brand img {
+    height: 60px !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 15px !important;
+    transition: color 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+}
+
+.navbar-nav .nav-link:focus {
+    outline: none !important;
+}
+
+.navbar-nav .nav-link span {
+    font-weight: bold !important;
+}
+
+.nav-link span.badge {
+    background-color: #007bff !important;
+    font-size: 0.75rem !important;
+    margin-left: 5px !important;
+}
+
+.nav-link span.badge:hover {
+    background-color: #0056b3 !important;
+}
+
+</style>
 </head>
 <body>
 
@@ -18,7 +102,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img th:src="@{/images/logo.png}"  src="../static/images/logo.png" width="auto" height="40" class="d-inline-block align-top" alt=""/>
+            <img th:src="@{/images/logo.png}" height="60px"  src="../static/images/logo.png" class="d-inline-block align-top" alt=""/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -129,7 +213,7 @@
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                     Shipping
-                                    <span>Gratis</span>
+                                    <span>Free</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div>

@@ -1,40 +1,102 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <title>View Products</title>
     <style>
         /* Remove underline on hover for navbar links */
         .navbar-nav .nav-item .nav-link:hover {
-          text-decoration: none;
+            text-decoration: none;
         }
 
         /* Customize the navbar color */
         .navbar {
-          background: linear-gradient(
-            to right,
-            rgb(115, 180, 236),
-            #134e67
-          ); /* Gradient from dark blue to black */
+            background: linear-gradient(
+                    to right,
+                    rgb(115, 180, 236),
+                    #134e67
+            ); /* Gradient from dark blue to black */
         }
+
+        /* Style for main content container */
+        .container {
+            margin-top: 50px; /* Adjust the margin as needed */
+        }
+
+        /* Style for the product image */
+        .product-image {
+            height: 300px;
+            width: 300px;
+        }
+
+        /* Style for the product details */
+        .product-details {
+            margin-top: 20px;
+        }
+
+        /* Style for the add to cart button */
+        .btn-primary {
+            background-color: #007bff; /* Primary color */
+            border-color: #007bff; /* Primary color */
+        }/* Navigation Bar */
+.navbar {
+    background-color: #333 !important;
+}
+
+.navbar-brand img {
+    height: 60px !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 15px !important;
+    transition: color 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+}
+
+.navbar-nav .nav-link:focus {
+    outline: none !important;
+}
+
+.navbar-nav .nav-link span {
+    font-weight: bold !important;
+}
+
+.nav-link span.badge {
+    background-color: #007bff !important;
+    font-size: 0.75rem !important;
+    margin-left: 5px !important;
+}
+
+.nav-link span.badge:hover {
+    background-color: #0056b3 !important;
+}
+
     </style>
+    <title>View Products</title>
 </head>
 <body>
-
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
-                 class="d-inline-block align-top" alt=""/>
+            <img th:src="@{/images/logo.png}" height="60px" src="../static/images/logo.png" class="d-inline-block align-top" alt=""/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,17 +125,16 @@
                     <span class="nav-link" th:text="${cartCount}"></span>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-5 d-flex justify-content-center">
-            <img class="mt-5" height="300px" width="300px" src="" th:src="@{${'/productImages/' + product.imageName}}"
-                 alt="">
+            <img class="product-image" th:src="@{${'/productImages/' + product.imageName}}" alt="">
         </div>
-        <div class="col-sm-7 mt-5">
+        <div class="col-sm-7 mt-5 product-details">
             <h2 th:text="${product.name}"></h2>
             <p th:text="${product.category.name}"></p>
             <h2>₹ <span th:text="${product.price}"></span></h2>
@@ -85,8 +146,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
-        /* Remove underline on hover for navbar links */
-      .navbar-nav .nav-item .nav-link:hover {
-        text-decoration: none;
-      }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
 
-      /* Customize the navbar color */
-      .navbar {
-        background: linear-gradient(
-          to right,
-          rgb(115, 180, 236),
-          #134e67
-        ); /* Gradient from dark blue to black */
-      }
+        /* Remove underline on hover for navbar links */
+        .navbar-nav .nav-item .nav-link:hover {
+            text-decoration: none;
+        }
+
+        /* Customize the navbar color */
+        .navbar {
+            background: linear-gradient(to right, rgb(115, 180, 236), #134e67);
+        }
 
         /* Style for grid view */
         .grid-container {
@@ -46,18 +48,25 @@
 
         /* Adjust styles for card in grid view */
         .grid-container .card {
-            height: 100%; /* Set the card height */
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .grid-container .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Ensure images are centered and fit within the card */
         .grid-container .card img {
             max-height: 100%;
             max-width: 100%;
-            margin: auto; /* Center the image within the card */
-            display: block; /* Remove any default spacing */
+            margin: auto;
+            display: block;
+            border-bottom: 1px solid #dee2e6;
         }
 
         /* Ensure text is vertically centered in each card */
@@ -65,34 +74,118 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100%; /* Make card body take up 100% of the card height */
+            height: 100%;
+            padding: 20px;
         }
 
         /* Ensure the paragraph takes up remaining space in the card body */
         .grid-container .card-body p {
             flex-grow: 1;
+            font-size: 14px;
+            color: #6c757d;
         }
+
+        /* Adjust styles for card in list view */
+        .list-container .card {
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .list-container .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .list-container .card img {
+            max-height: 100%;
+            max-width: 100%;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .list-container .card-body {
+            padding: 20px;
+        }
+
+        .list-container .card-body h5 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .list-container .card-body h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .list-container .card-body .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .list-container .card-body .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .list-group-item:hover {
+            background-color: #007bff; /* Change this color to your preferred hover color */
+            color: #fff; /* Change text color to white or another contrasting color */
+        }/* Navigation Bar */
+.navbar {
+    background-color: #333 !important;
+}
+
+.navbar-brand img {
+    height: 60px !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 15px !important;
+    transition: color 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+}
+
+.navbar-nav .nav-link:focus {
+    outline: none !important;
+}
+
+.navbar-nav .nav-link span {
+    font-weight: bold !important;
+}
+
+.nav-link span.badge {
+    background-color: #007bff !important;
+    font-size: 0.75rem !important;
+    margin-left: 5px !important;
+}
+
+.nav-link span.badge:hover {
+    background-color: #0056b3 !important;
+}
+
     </style>
 
-
-
-    <title>Document</title>
+    <title>ShopTronic</title>
 </head>
 <body>
 
 <nav
         class="navbar navbar-expand-lg navbar-dark"
-        style="background-color: #292b2c"
 >
     <a class="navbar-brand" href="#">
-        <img
-                th:src="@{/images/logo.png}"
-                src="../static/images/logo.png"
-                width="auto"
-                height="40"
-                class="d-inline-block align-top"
-                alt=""
-        />
+        <img th:src="@{/images/logo.png}" height="60px"  src="../static/images/logo.png" class="d-inline-block align-top" alt=""/>
+
     </a>
     <button
             class="navbar-toggler"
@@ -156,13 +249,12 @@
                 <a href="" th:each="category, iStat : ${categories}"
                    th:href="@{/shop/category/{id}(id=${category.id})}"><li
                         class="list-group-item" th:text="${category.name}"></li></a>
-
             </ul>
         </div>
 
-        <div class="col-sm-9" id="productContainer">
-            <div class="card" style="margin-top: 20px" th:each="product : ${products}">
-                <div class="row no-gutters">
+        <div class="col-sm-9 grid-container" id="productContainer">
+            <div class="card" th:each="product : ${products}">
+                <div class="row no-gutters item">
                     <div class="col-sm-12 d-flex flex-column align-items-center">
                         <img class="" height="150px" width="150px" th:src="@{${'/productImages/' + product.imageName}}" th:alt="${product.name}">
                         <div class="card-body text-center mt-3">
@@ -173,11 +265,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </div>
     </div>
@@ -221,10 +308,6 @@
         }
     });
 </script>
-
-
-
-
 
 </body>
 </html>
