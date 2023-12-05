@@ -69,14 +69,5 @@ Shoptronic is a CRUD e-commerce platform that integrates a responsive front end 
     <br>
 
 
-## Getting Started
-
-Follow these steps to set up and run the Shoptronic project locally:
-
-1. Clone the repository: `git clone https://github.com/your-username/shoptronic.git`
-2. Navigate to the project directory: `cd shoptronic`
-3. Build and run the project using your preferred IDE or build tool.
-4. Access the application through the provided endpoints.
-
 
 
