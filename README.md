@@ -1,5 +1,6 @@
 # Shoptronic - SpringBoot CRUD Project
 
+<<<<<<< HEAD
 Shoptronic is a full-stack e-commerce platform that combines a responsive front end (HTML, CSS, JS) with a robust Spring Boot backend. It utilizes PostgreSQL for efficient data management and ensures secure authentication through Google OAuth2. The project is actively working on implementing a payment gateway to enhance user transactions.
 
 ## Features
@@ -8,6 +9,16 @@ Shoptronic is a full-stack e-commerce platform that combines a responsive front 
 - **CRUD Operations:** Complete set of Create, Read, Update, and Delete functionalities for a comprehensive e-commerce experience.
 - **Authentication with Google OAuth2:** Ensures secure and seamless login through Google accounts.
 - **Payment Gateway (Work in Progress):** Ongoing efforts to implement a payments gateway for enhanced transaction capabilities.
+=======
+Shoptronic is a CRUD e-commerce platform that integrates a responsive front end (HTML, CSS, JS) with Spring Boot on the backend. Supported by PostgreSQL for data management, Shoptronic also features secure authentication through Google OAuth2. Currently payments gateway is under work.
+
+## Features
+
+- **Full Stack Development:** HTML, CSS, JS, and Spring Boot with PostgreSQL.
+- **CRUD Operations:** Essential functionalities for a complete e-commerce experience.
+- **Authentication with Google OAuth2:** Secure and hassle-free login.
+- **Payment Gateway (Work in Progress):** working on implementing a payments gateway.
+>>>>>>> c62accc01c1f039c3c294f09b337c69084060c76
 
 ## Technologies
 
